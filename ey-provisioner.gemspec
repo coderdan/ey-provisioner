@@ -17,6 +17,11 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'excon'
   gem.add_dependency 'json'
+  gem.add_dependency 'activemodel'
+
+  gem.add_development_dependency 'pry'
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'mocha'
+  gem.add_development_dependency 'shoulda'
+  gem.add_development_dependency 'activesupport'
 end

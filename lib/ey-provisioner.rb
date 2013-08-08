@@ -1,9 +1,13 @@
 require 'excon'
 require 'json'
-require "ey-provisioner/version"
+require 'active_model'
+require "ey-provisioner/api_error"
 require "ey-provisioner/base"
 require "ey-provisioner/environment"
-require "ey-provisioner/api_error"
+require "ey-provisioner/instance"
+require "ey-provisioner/invalid_request"
+require "ey-provisioner/request"
+require "ey-provisioner/version"
 
 module Ey
   module Provisioner
