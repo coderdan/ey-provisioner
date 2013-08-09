@@ -23,8 +23,8 @@ describe Ey::Provisioner::APIError do
         let(:response)      { stub("response", :body => JSON(body_hash)) }
         let(:error)         { stub("error", :message => "message", :response => response) }
         its(:message)       { should == "rejected: name can't be blank" }
-        its(:error_message) { "name can't be blank" }
-        its(:errors)        { errors }
+        its(:error_message) { should == "name can't be blank" }
+        its(:errors)        { should == errors }
       end
 
       context "with no errors" do
@@ -32,8 +32,8 @@ describe Ey::Provisioner::APIError do
         let(:response)      { stub("response", :body => JSON(body_hash)) }
         let(:error)         { stub("error", :message => "message", :response => response) }
         its(:message)       { should == "rejected: " }
-        its(:error_message) { nil }
-        its(:errors)        { nil }
+        its(:error_message) { should be_nil }
+        its(:errors)        { should be_nil }
       end
     end
 
@@ -53,6 +53,16 @@ describe Ey::Provisioner::APIError do
         its(:error_message) { "name can't be blank" }
         its(:errors)        { errors }
       end
+    end
+
+    context "with an empty string body" do
+      let(:errors)        { nil }
+      let(:response)      { stub("response", :body => "") }
+      let(:error)         { stub("error", :message => "message", :response => response) }
+
+      its(:message)       { should == "message" }
+      its(:error_message) { should be_nil }
+      its(:errors)        { should be_nil }
     end
   end
 end

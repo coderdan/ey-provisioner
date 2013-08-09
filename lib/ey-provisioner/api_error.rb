@@ -26,7 +26,7 @@ module Ey
 
       private
         def parse_error
-          if @error.respond_to?(:response)
+          if @error.respond_to?(:response) && @error.response.body.present?
             body_hash = JSON(@error.response.body)
             @status   = body_hash.fetch('status', 'unknown')
             @errors   = body_hash['errors']
