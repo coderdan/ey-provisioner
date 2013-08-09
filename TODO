@@ -1,4 +1,4 @@
-Environment ID should go in environment constructor and we should define a connection object to take the token
 README
-Delete
 Status
+List all environments
+Find environment by ID from connection object. eg; connection.environments(id).add_instance

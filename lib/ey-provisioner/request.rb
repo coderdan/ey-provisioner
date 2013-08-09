@@ -30,14 +30,14 @@ module Ey
         @volume_size = arg.to_s
       end
 
-      def body
+      def to_hash
         raise InvalidRequest.new(self) if !valid?
-        request        = {}
-        request[:role] = self.role
-        [ :name, :instance_size, :volume_size, :snapshot_id, :availability_zone ].each do |attr|
-          request[attr] = send(attr) unless send(attr).nil?
+        {}.tap do |request|
+          request[:role] = self.role
+          [ :name, :instance_size, :volume_size, :snapshot_id, :availability_zone ].each do |attr|
+            request[attr] = send(attr) unless send(attr).nil?
+          end
         end
-        { :request => request }
       end
     end
   end

@@ -34,43 +34,43 @@ describe Ey::Provisioner::Request do
     end
   end
 
-  describe "body" do
-    subject { request.body }
+  describe "to_hash" do
+    subject { request.to_hash }
 
     context "with valid data" do
       context "with only defaults" do
         let(:request) { Ey::Provisioner::Request.new }
-        it            { should == { :request => { :role => 'util' }} }
+        it            { should == { :role => 'util' } }
       end
 
       context "with a role" do
         let(:request) { Ey::Provisioner::Request.new(:role => 'app') }
-        it            { should == { :request => { :role => 'app' }} }
+        it            { should == { :role => 'app' } }
       end
 
       context "with a name provided" do
         let(:request) { Ey::Provisioner::Request.new(:name => "My Name") }
-        it            { should == { :request => { :name => "My Name", :role => 'util' }} }
+        it            { should == { :name => "My Name", :role => 'util' } }
       end
 
       context "with an instance size" do
         let(:request) { Ey::Provisioner::Request.new(:instance_size => "small") }
-        it            { should == { :request => { :instance_size => "small", :role => 'util' }} }
+        it            { should == { :instance_size => "small", :role => 'util' } }
       end
 
       context "with a volume_size" do
         let(:request) { Ey::Provisioner::Request.new(:volume_size => 100) }
-        it            { should == { :request => { :volume_size => "100", :role => 'util' }} }
+        it            { should == { :volume_size => "100", :role => 'util' } }
       end
 
       context "with a snapshot_id" do
         let(:request) { Ey::Provisioner::Request.new(:snapshot_id => "snap-99999999") }
-        it            { should == { :request => { :snapshot_id => "snap-99999999", :role => 'util' }} }
+        it            { should == { :snapshot_id => "snap-99999999", :role => 'util' } }
       end
 
       context "with a availability_zone" do
         let(:request) { Ey::Provisioner::Request.new(:availability_zone => "us-east-1a") }
-        it            { should == { :request => { :availability_zone => "us-east-1a", :role => 'util' }} }
+        it            { should == { :availability_zone => "us-east-1a", :role => 'util' } }
       end
     end
   end
@@ -79,7 +79,7 @@ describe Ey::Provisioner::Request do
     let(:request) { Ey::Provisioner::Request.new(:role => "invalid role") }
 
     it "should raise an error" do
-      expect { request.body }.to raise_error(Ey::Provisioner::InvalidRequest, "Invalid Request: Role is not included in the list")
+      expect { request.to_hash }.to raise_error(Ey::Provisioner::InvalidRequest, "Invalid Request: Role is not included in the list")
     end
   end
 end
