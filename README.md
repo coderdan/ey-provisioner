@@ -2,6 +2,8 @@
 
 TODO: Write a gem description
 
+[![Build Status](https://api.travis-ci.org/coderdan/ey-provisioner.png)](https://travis-ci.org/coderdan/ey-provisioner)
+
 ## Installation
 
 Add this line to your application's Gemfile:
