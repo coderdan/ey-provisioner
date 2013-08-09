@@ -1,4 +1,3 @@
-Clean up custom matcher in environment spec
 Environment ID should go in environment constructor and we should define a connection object to take the token
 README
 Delete

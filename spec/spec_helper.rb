@@ -1,5 +1,7 @@
 require File.expand_path("../../lib/ey-provisioner", __FILE__)
 
+Dir[File.expand_path("../../spec/support/**/*.rb", __FILE__)].each {|f| require f}
+
 require 'active_support'
 require 'active_support/core_ext/array/wrap'
 
