@@ -3,6 +3,7 @@
 TODO: Write a gem description
 
 [![Build Status](https://api.travis-ci.org/coderdan/ey-provisioner.png)](https://travis-ci.org/coderdan/ey-provisioner)
+[![Code Climate](https://codeclimate.com/github/coderdan/ey-provisioner.png)](https://codeclimate.com/github/coderdan/ey-provisioner)
 
 ## Installation
 
