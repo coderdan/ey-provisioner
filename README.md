@@ -47,6 +47,10 @@ Within the EngineYard interface, click on the deployment history link within the
 
 The Gem does not currently support retrieving provisioning status nor does it allow you to list all environments for the account.
 
+## Documentation
+
+Full documentation can be found [here](http://rubydoc.info/github/coderdan/ey-provisioner/master/frames).
+
 ## Contributing
 
 1. Fork it
