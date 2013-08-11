@@ -28,4 +28,10 @@ describe Ey::Provisioner::Connection do
       subject.http_post("testpath", request)
     end
   end
+
+  describe "environment" do
+    it "should return an environment instance" do
+      subject.environment(1234).should be_a(Ey::Provisioner::Environment)
+    end
+  end
 end

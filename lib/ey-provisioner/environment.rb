@@ -6,24 +6,18 @@ module Ey
         @env_id     = env_id
       end
 
+      # Remove instances from the environment
+      #
+      # @param options [Hash] attributes to define what to remove (eg; name, role). See EY docs
       def remove_instances(options = {})
         process_post(path_for(:remove_instances), options)
       end
 
+      # Add an instance to the environment
+      #
+      # @param options [Hash] attributes to define the server to add (eg; name, role). See EY docs
       def add_instance(options = {})
         process_post(path_for(:add_instances), options)
-      end
-
-      # TODO: Handle add and remove status
-      def status(options = {})
-        api_error_handler do
-          request = Request.new(options)
-          @connection.http_get(
-            :headers => @connection.headers,
-            :path    => "/api/v2/environments/#{@env_id}/add_instances",
-            :expects => [200, 201, 202]
-          )
-        end
       end
 
       private

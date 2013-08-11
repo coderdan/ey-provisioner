@@ -1,4 +1,2 @@
-README
-Status
-List all environments
-Find environment by ID from connection object. eg; connection.environments(id).add_instance
+* Ability to get provisioning Status
+* List all environments for a connection

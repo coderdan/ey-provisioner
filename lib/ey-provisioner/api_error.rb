@@ -16,6 +16,7 @@ module Ey
         end
       end
 
+      # Specific EngineYard API error
       def error_message
         if @errors
           @errors.map { |(k,v)|

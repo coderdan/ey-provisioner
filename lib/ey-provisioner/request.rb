@@ -19,6 +19,9 @@ module Ey
                 :inclusion => { :in => Instance::TYPES },
                 :allow_nil => true
 
+      # Create a new request
+      #
+      # @param options [Hash]
       def initialize(options = {})
         options.each do |(attr,value)|
           send("#{attr}=", value)
@@ -30,6 +33,7 @@ module Ey
         @volume_size = arg.to_s
       end
 
+      # A hash representation of the request
       def to_hash
         raise InvalidRequest.new(self) if !valid?
         {}.tap do |request|
