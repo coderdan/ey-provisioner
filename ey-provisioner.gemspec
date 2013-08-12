@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Ey::Provisioner::VERSION
 
-  gem.add_dependency 'excon', ">= 0.25"
+  gem.add_dependency 'excon', ">= 0.6"
   gem.add_dependency 'json'
   gem.add_dependency 'activemodel', '>= 3.2'
 
