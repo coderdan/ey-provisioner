@@ -33,6 +33,11 @@ module Ey
         @volume_size = arg.to_s
       end
 
+      def instance_size=(size)
+        # Ensure symbols are converted to strings
+        @instance_size = size.to_s unless size.nil?
+      end
+
       # A hash representation of the request
       def to_hash
         raise InvalidRequest.new(self) if !valid?
