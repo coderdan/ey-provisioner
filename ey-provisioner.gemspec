@@ -3,10 +3,10 @@ require File.expand_path('../lib/ey-provisioner/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Dan Draper"]
-  gem.email         = ["daniel@codefire.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.email         = ["daniel@codehire.com"]
+  gem.description   = %q{Ruby based client gem for interacting with the EngineYard Instance Provisioning API}
+  gem.summary       = %q{Ruby based client gem for interacting with the EngineYard Instance Provisioning API}
+  gem.homepage      = "https://github.com/coderdan/ey-provisioner"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
