@@ -10,7 +10,7 @@ describe Ey::Provisioner::Request do
   Ey::Provisioner::Instance::TYPES.each do |instance_type|
     it { should allow_value(instance_type).for(:instance_size) }
   end
-  it { should allow_value(:medium_ram_64).for(:instance_size) }
+  it { should allow_value(:medium_ram).for(:instance_size) }
   it { should_not allow_value('another').for(:instance_size) }
   it { should     allow_value(nil).for(:instance_size) }
 
