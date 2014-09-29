@@ -9,6 +9,7 @@ require 'pry'
 require 'mocha/api'
 require 'shoulda'
 require 'shoulda/matchers'
+require 'rspec/its'
 
 RSpec.configure do |config|
   config.mock_with :mocha

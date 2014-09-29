@@ -14,18 +14,24 @@ module Ey
 
       TYPES = %w(
         small
-        small_64
         medium_ram
-        medium_ram_64
         medium_cpu
-        medium_cpu_64
+        c3_large
         large
+        c3_xlarge
+        xlarge_ram
         xlarge
         xlarge_cpu
-        xlarge_ram
+        c3_2xlarge
         doublexlarge_ram
+        c3_4xlarge
         quadxlarge_ram
+        c3_8xlarge
         quadxlarge_io
+        m3_medium
+        m3_large
+        m3_xlarge
+        m3_2xlarge
       )
 
       # Create an Instance representation
